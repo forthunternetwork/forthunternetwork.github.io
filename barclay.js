@@ -168,7 +168,7 @@
     var toggle = 0;
     
     // load the data, pass in error, graph variables
-    d3.json("force.json", function(error, graph) {
+    d3.json("barclay.json", function(error, graph) {
       if (error) throw error;
       
       var link = svg.append("g")
