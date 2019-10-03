@@ -1,0 +1,82 @@
+<title>All One People</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="d3-legend.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="bootswatch.css">
+<link rel="stylesheet" href="custom.css">
+
+<body>
+  <div class="container">
+    <br>
+    <div class="jumbotron">
+      <h2 class="display-4">All One People and Under One King</h2>
+      <hr>
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg btn-block" href="javascript:void(0);" onclick="javascript:introJs().start();">Tour</a>
+        <br>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" data-step="5" data-intro="Toggle this to change all visuals to a deuteranomaly friendly palette.">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="color-blind" id="default-color" value="default" autocomplete="off" checked>Default Palette
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="color-blind" id="cb-color" value="cb-color" autocomplete="off">Color Blind
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="essay" class="container">
+    <div id="viz-block-1" class="viz-block col-12" role="img" aria-label="[title]">
+        <title>Network visualization of the Fort Hunter congregation, 1734-1746</title>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col"><label for="filter-fill-1"><strong>Color individuals by:</strong></label></div>
+            <div class="col"><label for="node-size-1"><strong>Size individuals by:</strong></label></div>
+          </div>
+      
+          <div class="form-row">
+            <div class="col">
+              <select id="filter-fill-1" class="form-control" data-step="2" data-intro="To start, individuals are colored by their race, but you can recolor them by other attributes like their gender, clan membership, role in the network, or the subcommunity they belong to.">
+                <option selected value="race">Race</option>
+                <option value="gender">Gender</option>
+                <option value="clan">Clan</option>
+                <option value="modularity_class">Subcommunity</option>
+                <option value="role">Role</option>
+              </select>
+            </div>
+            
+            <div class="col">
+            <select id="node-size-1" class="form-control" data-step="3" data-intro="Nodes can be resized according to their influence in the network or by the number of connections to others.  Node size will change over time as more nodes enter the network.">
+              <option selected value="betweenness">Network influence</option>
+              <option value="degree">Number of connections</option>
+            </select>
+          </div>
+          </div>
+          
+<!--          <div class="col-1"><label for="filter-stroke-1"><strong>Color individual outlines by:</strong></label></div>
+          <div class="col">
+            <select id="filter-stroke-1" class="form-control" data-step="2" data-intro="This is step two, recoloring outlines of nodes.">
+              <option selected value="race">Race</option>
+              <option value="gender">Gender</option>
+              <option value="clan">Clan</option>
+              <option value="modularity_class">Subcommunity</option>
+              <option value="role">Role</option>
+            </select>
+          </div>-->
+
+        </div>
+        
+        <div class="form-group">
+        <label for="selected-year-1">Year: </label><input type="range" name="year" class="slider form-control" data-step="4" data-intro="By default, the network shows all connections from the fully documented years of this baptismal network between 1734-1746.  Adjust the slider to select a year and the network will display all connections made to that point in time.  Moving the slider will cause the size of individuals in the network to change, reflecting their changing influence in the network as time advances." id="selected-year-1" value="1745" min="1734" max="1745" >
+        <span class="slider_label-1 h5"></span>
+        </div>
+      
+        <div class="viz" data-step="1" data-intro="Each dot here represents a person, and the lines between them represent a connection made as part of a baptismal sponsorship, with connections made between the baptized child, parents, and the godparents and baptismal sponsors.  Hover over an individual to see their name, gender, race, clan, and role in the network.  You can move a person by clicking and dragging them. Doubleclick to highlight all the people an individual is connected to, and doubleclick on a different individual to clear your selection.  To see different parts of the network, scroll to zoom or click and drag on white space to pan around the network." data-position="right-bottom-aligned" id="viz-1"></div>  
+      </div>
+    </body>
