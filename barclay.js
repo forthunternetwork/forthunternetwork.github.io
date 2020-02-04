@@ -532,209 +532,209 @@
       .attr("class", "tooltip-3");
     var toggleThree = 0;
     
-//     // load the data, pass in error, graph variables
-//     d3.json("native.json", function(error, graph) {
-//       if (error) throw error;
+    // load the data, pass in error, graph variables
+    d3.json("native.json", function(error, graph) {
+      if (error) throw error;
       
-//       var linkThree = svgThree.append("g")
-//         .attr("class", "links")
-//         .selectAll("line")
-//         .data(graph.links)
-//         .enter().append("line");
-//       //.attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+      var linkThree = svgThree.append("g")
+        .attr("class", "links")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line");
+      //.attr("stroke-width", function(d) { return Math.sqrt(d.value); });
       
-//       var nodeThree = svgThree.selectAll("circle")
-//         .data(graph.nodes)
-//         .enter().append("circle")
-//         .attr("id", function(d) { return d.name + "-3"})
-//         .attr("r", function(d) { return d.degree_1745 + 2; })
-//         .attr("fill", function(d) {
-//           return color(d[colorFillCategoryThree]);
-//         })
-//         .on("mouseover", function(d) {
-//           div.html("<h6>" + d.name + "</h6><strong>Race:</strong> " + d.race + "</br><strong>Gender:</strong> " + d.gender + "</br><strong>Clan:</strong> " + d.clan + "</br><strong>First appeared as:</strong> " + d.role + "</br><strong>Subcommunity:</strong> " + d.modularity_class)
-//             .style("left", (d3.event.pageX) + "px")
-//             .style("top", (d3.event.pageY - 28) + "px")
-//             .style("opacity", 1);
-//         })
-//         .on("mouseout", function(d) {
-//           div.transition()
-//             .duration(50) // duration is critical for mouse over.. if a user is moving the mouse fast the tooltip is not responsive
-//             .style("opacity", 0);
-//         })
-//         .call(d3.drag()
-//           .on("start", dragstarted)
-//           .on("drag", dragged)
-//           .on("end", dragended))
-//         .on('dblclick', connectedNodesThree);
+      var nodeThree = svgThree.selectAll("circle")
+        .data(graph.nodes)
+        .enter().append("circle")
+        .attr("id", function(d) { return d.name + "-3"})
+        .attr("r", function(d) { return d.degree_1745 + 2; })
+        .attr("fill", function(d) {
+          return color(d[colorFillCategoryThree]);
+        })
+        .on("mouseover", function(d) {
+          div.html("<h6>" + d.name + "</h6><strong>Race:</strong> " + d.race + "</br><strong>Gender:</strong> " + d.gender + "</br><strong>Clan:</strong> " + d.clan + "</br><strong>First appeared as:</strong> " + d.role + "</br><strong>Subcommunity:</strong> " + d.modularity_class)
+            .style("left", (d3.event.pageX) + "px")
+            .style("top", (d3.event.pageY - 28) + "px")
+            .style("opacity", 1);
+        })
+        .on("mouseout", function(d) {
+          div.transition()
+            .duration(50) // duration is critical for mouse over.. if a user is moving the mouse fast the tooltip is not responsive
+            .style("opacity", 0);
+        })
+        .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended))
+        .on('dblclick', connectedNodesThree);
       
-//       var textThree = svgThree.selectAll("text")
-//         .data(nodeThree)
-//         .enter()
-//         .append("text");
+      var textThree = svgThree.selectAll("text")
+        .data(nodeThree)
+        .enter()
+        .append("text");
       
-//       var labelsThree = textThree
-//         .attr("x", function(d) {
-//           return d.cx
-//         })
-//         .attr("y", function(d) {
-//           return d.cy
-//         })
-//         .text(function(d) {
-//           return "( " + d.cx + ", " + d.cy + " )"
-//         })
-//       simulationThree
-//         .nodes(graph.nodes)
-//         .on("tick", tickedThree);
-//       simulationThree.force("link")
-//         .links(graph.links);
-//       function tickedThree() {
-//         linkThree
-//           .attr("x1", function(d) {
-//             return d.source.x;
-//           })
-//           .attr("y1", function(d) {
-//             return d.source.y;
-//           })
-//           .attr("x2", function(d) {
-//             return d.target.x;
-//           })
-//           .attr("y2", function(d) {
-//             return d.target.y;
-//           });
-//         nodeThree
-//           .attr("cx", function(d) {
-//             return d.x;
-//           })
-//           .attr("cy", function(d) {
-//             return d.y;
-//           });
-//       }
+      var labelsThree = textThree
+        .attr("x", function(d) {
+          return d.cx
+        })
+        .attr("y", function(d) {
+          return d.cy
+        })
+        .text(function(d) {
+          return "( " + d.cx + ", " + d.cy + " )"
+        })
+      simulationThree
+        .nodes(graph.nodes)
+        .on("tick", tickedThree);
+      simulationThree.force("link")
+        .links(graph.links);
+      function tickedThree() {
+        linkThree
+          .attr("x1", function(d) {
+            return d.source.x;
+          })
+          .attr("y1", function(d) {
+            return d.source.y;
+          })
+          .attr("x2", function(d) {
+            return d.target.x;
+          })
+          .attr("y2", function(d) {
+            return d.target.y;
+          });
+        nodeThree
+          .attr("cx", function(d) {
+            return d.x;
+          })
+          .attr("cy", function(d) {
+            return d.y;
+          });
+      }
       
-//       // mouse double click highlight is taken from this example:
-//       // http://www.coppelia.io/2014/06/finding-neighbours-in-a-d3-force-directed-layout-3/
-//       // we need to create an array of "connections" for quick lookup
-//       var linkedByIndexThree = {};
-//       for (i = 0; i < graph.nodes.length; i++) {
-//           linkedByIndexThree[i + "," + i] = 1;
-//       };
+      // mouse double click highlight is taken from this example:
+      // http://www.coppelia.io/2014/06/finding-neighbours-in-a-d3-force-directed-layout-3/
+      // we need to create an array of "connections" for quick lookup
+      var linkedByIndexThree = {};
+      for (i = 0; i < graph.nodes.length; i++) {
+          linkedByIndexThree[i + "," + i] = 1;
+      };
       
-//       // Loop over each "link" and determine if they are connectioned
-//       graph.links.forEach(function (d) {
-//           linkedByIndexThree[d.source.index + "," + d.target.index] = 1;
-//       });
+      // Loop over each "link" and determine if they are connectioned
+      graph.links.forEach(function (d) {
+          linkedByIndexThree[d.source.index + "," + d.target.index] = 1;
+      });
       
-//       // define a "lookup" function to get connections
-//       function neighboringThree(a, b) {
-//           return linkedByIndexThree[a.index + "," + b.index];
-//       };
-//       linksThree = d3.selectAll('line');
+      // define a "lookup" function to get connections
+      function neighboringThree(a, b) {
+          return linkedByIndexThree[a.index + "," + b.index];
+      };
+      linksThree = d3.selectAll('line');
       
-//       // set opacity based on connections
-//       function connectedNodesThree() {
-//           if (toggleThree == 0) {
-//               // select the nodes
-//               d = d3.select(this).node().__data__;
-//               // loop over each node and style
-//               node.style("opacity", function (o) {
-//                   // ? is a conditional operator of the form condition ? value-if-true : value-if-false
-//                   return neighboringThree(d, o) | neighboringThree(o, d) ? 1 : 0.15;
-//               });
-//               toggleThree = 1;
-//           } else {
-//               node.style("opacity", 1);;
-//               toggleThree = 0;
-//           }
-//       };
-//     });
+      // set opacity based on connections
+      function connectedNodesThree() {
+          if (toggleThree == 0) {
+              // select the nodes
+              d = d3.select(this).node().__data__;
+              // loop over each node and style
+              node.style("opacity", function (o) {
+                  // ? is a conditional operator of the form condition ? value-if-true : value-if-false
+                  return neighboringThree(d, o) | neighboringThree(o, d) ? 1 : 0.15;
+              });
+              toggleThree = 1;
+          } else {
+              node.style("opacity", 1);;
+              toggleThree = 0;
+          }
+      };
+    });
     
-//     //update legend domains
+    //update legend domains
     
-//     function updateLegendThree() {
-//       legendDomainThree = [];
+    function updateLegendThree() {
+      legendDomainThree = [];
       
-//       if (colorFillLegendThree == ['race']) {
-//         var fillLegendThree = raceDomain
-//       } else if (colorFillLegendThree == ['gender']) {
-//         var fillLegendThree = genderDomain
-//       } else if (colorFillLegendThree == ['clan']) {
-//         var fillLegendThree = clanDomain
-//       } else if (colorFillLegendThree == ['modularity_class']) {
-//         var fillLegendThree = modularityDomain
-//       } else if (colorFillLegendThree == ['role']) {
-//         var fillLegendThree = roleDomain
-//       }
+      if (colorFillLegendThree == ['race']) {
+        var fillLegendThree = raceDomain
+      } else if (colorFillLegendThree == ['gender']) {
+        var fillLegendThree = genderDomain
+      } else if (colorFillLegendThree == ['clan']) {
+        var fillLegendThree = clanDomain
+      } else if (colorFillLegendThree == ['modularity_class']) {
+        var fillLegendThree = modularityDomain
+      } else if (colorFillLegendThree == ['role']) {
+        var fillLegendThree = roleDomain
+      }
       
-//       if (typeof fillLegendThree == 'undefined') {
-//         fillLegendThree = genderDomain
-//       }
-//       //if (typeof strokeLegendThree == 'undefined') {
-//       //  strokeLegendThree = raceDomain
-//       //}
+      if (typeof fillLegendThree == 'undefined') {
+        fillLegendThree = genderDomain
+      }
+      //if (typeof strokeLegendThree == 'undefined') {
+      //  strokeLegendThree = raceDomain
+      //}
       
-//       legendDomainThree = fillLegendThree
-//     };
+      legendDomainThree = fillLegendThree
+    };
     
-//     // Update node size
+    // Update node size
     
-//     function updateNodeSizeThree(){
-//       var allCirclesThree = svgThree.selectAll('circle')
-//       // loop over each node, and update color attribute
-//       allCirclesThree.transition().duration(300).attr("r", function(d) {
-//         if (nodeSizeThree == 'betweenness') {
-//           nodeSizeValueThree = d["betweenesscentrality_" + selectedYearThree] * 150 + 5
-//         } else {
-//           nodeSizeValueThree = d["degree_" + selectedYearThree] + 2
-//         }
-//         return nodeSizeValueThree;
-//         })
-//       allCirclesThree.exit().remove()
-//     };
+    function updateNodeSizeThree(){
+      var allCirclesThree = svgThree.selectAll('circle')
+      // loop over each node, and update color attribute
+      allCirclesThree.transition().duration(300).attr("r", function(d) {
+        if (nodeSizeThree == 'betweenness') {
+          nodeSizeValueThree = d["betweenesscentrality_" + selectedYearThree] * 150 + 5
+        } else {
+          nodeSizeValueThree = d["degree_" + selectedYearThree] + 2
+        }
+        return nodeSizeValueThree;
+        })
+      allCirclesThree.exit().remove()
+    };
     
-//     /* ------------ Update Node Color --------------*/
-//     // function to get all nodes, and change the color. Follow the general update pattern
-//     // https://bl.ocks.org/mbostock/3808218
+    /* ------------ Update Node Color --------------*/
+    // function to get all nodes, and change the color. Follow the general update pattern
+    // https://bl.ocks.org/mbostock/3808218
     
-//     function updateNodeColorThree(){
-//       var color = d3.scaleOrdinal()
-//       .domain(allDomains)
-//       .range(selectedColorPalette);
-//       var allCirclesThree = svgThree.selectAll('circle')
-//       // loop over each node, and update color attribute
-//       allCirclesThree.transition().duration(300).attr("fill", function(d,i){
-//         return color(d[colorFillCategoryThree])
-//       });
-//       allCirclesThree.exit().remove();
-//       ////update legend
-//       redrawLegendThree();
-//     };
+    function updateNodeColorThree(){
+      var color = d3.scaleOrdinal()
+      .domain(allDomains)
+      .range(selectedColorPalette);
+      var allCirclesThree = svgThree.selectAll('circle')
+      // loop over each node, and update color attribute
+      allCirclesThree.transition().duration(300).attr("fill", function(d,i){
+        return color(d[colorFillCategoryThree])
+      });
+      allCirclesThree.exit().remove();
+      ////update legend
+      redrawLegendThree();
+    };
     
-//     function updateNodeOutlineThree(){
-//       var color = d3.scaleOrdinal()
-//       .domain(allDomains)
-//       .range(selectedColorPalette);
-//       var allCirclesThree = svgThree.selectAll('circle')
-//       // loop over each node, and update color attribute
-//       allCirclesThree.transition().duration(300).attr("stroke", function(d,i){
-//         return color(d[colorStrokeCategoryThree])
-//       });
-//       allCirclesThree.exit().remove();
-//       ////update legend
-//       redrawLegendThree();
+    function updateNodeOutlineThree(){
+      var color = d3.scaleOrdinal()
+      .domain(allDomains)
+      .range(selectedColorPalette);
+      var allCirclesThree = svgThree.selectAll('circle')
+      // loop over each node, and update color attribute
+      allCirclesThree.transition().duration(300).attr("stroke", function(d,i){
+        return color(d[colorStrokeCategoryThree])
+      });
+      allCirclesThree.exit().remove();
+      ////update legend
+      redrawLegendThree();
 
-//     };
+    };
     
-//     function showLinkLinesThree(){
-//       var filterIdThree = [];
-//       var allLinesThree = svgThree.selectAll('line');
-//       var allNodesThree = svgThree.selectAll('circle');
-//       // loop over each node, and update color attribute
-//       allLinesThree.style("stroke-opacity", function(d,i){
-//         return d.year <= parseInt(selectedYearThree) ? 0.7 : 0
-//       });
-//       allLinesThree.exit().remove()
-//       allNodesThree.style('opacity',function(d,i){
-//         return (d.year <= parseInt(selectedYearThree))? 1 : 0
-//       });
-//       allNodesThree.exit().remove()
-//     };
+    function showLinkLinesThree(){
+      var filterIdThree = [];
+      var allLinesThree = svgThree.selectAll('line');
+      var allNodesThree = svgThree.selectAll('circle');
+      // loop over each node, and update color attribute
+      allLinesThree.style("stroke-opacity", function(d,i){
+        return d.year <= parseInt(selectedYearThree) ? 0.7 : 0
+      });
+      allLinesThree.exit().remove()
+      allNodesThree.style('opacity',function(d,i){
+        return (d.year <= parseInt(selectedYearThree))? 1 : 0
+      });
+      allNodesThree.exit().remove()
+    };
