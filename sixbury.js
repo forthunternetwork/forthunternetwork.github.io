@@ -1,6 +1,6 @@
 //viz-block-sizbury
 
-var parentDiv = document.getElementById("viz-sixbury");
+var parentDiv = document.getElementById("viz-block-sixbury");
 //var width = 800;
 //var height = 650;
 var width = parentDiv.clientWidth;
