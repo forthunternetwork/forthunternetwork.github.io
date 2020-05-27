@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "year": "January 1734",
+      "name": "William Sixbury"
+    },
+    {
+      "year": "January 1734",
+      "name": "Mary Sixbury"
+    },
+    {
+      "year": "January 1734",
+      "name": "Cornelius Sixbury"
+    },
+    {
+      "year": "January 1734",
+      "name": "John Hough"
+    },
+    {
+      "year": "January 1734",
+      "name": "Mary Phillipse"
+    },
+    {
+      "year": "September 1735",
+      "name": "William Bowen"
+    },
+    {
+      "year": "September 1735",
+      "name": "Cornelia Bowen"
+    },
+    {
+      "year": "September 1735",
+      "name": "Infant Bowen"
+    },
+    {
+      "year": "September 1735",
+      "name": "John Bowen"
+    },
+    {
+      "year": "September 1735",
+      "name": "Susan Bowen"
+    }
+  ],
+  "links": [
+    {
+      "year": "January 1734",
+      "source": "William Sixbury",
+      "target": "Mary Sixbury"
+    },
+    {
+      "year": "January 1734",
+      "source": "William Sixbury",
+      "target": "Cornelius Sixbury"
+    },
+    {
+      "year": "January 1734",
+      "source": "William Sixbury",
+      "target": "John Hough"
+    },
+    {
+      "year": "January 1734",
+      "source": "William Sixbury",
+      "target": "Mary Phillipse"
+    },
+    {
+      "year": "January 1734",
+      "source": "Mary Sixbury",
+      "target": "Cornelius Sixbury"
+    },
+    {
+      "year": "January 1734",
+      "source": "Mary Sixbury",
+      "target": "John Hough"
+    },
+    {
+      "year": "January 1734",
+      "source": "Mary Sixbury",
+      "target": "Mary Phillipse"
+    },
+    {
+      "year": "January 1734",
+      "source": "Cornelius Sixbury",
+      "target": "John Hough"
+    },
+    {
+      "year": "January 1734",
+      "source": "Cornelius Sixbury",
+      "target": "Mary Phillipse"
+    },
+    {
+      "year": "January 1734",
+      "source": "John Hough",
+      "target": "Mary Phillipse"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Sixbury",
+      "target": "William Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Sixbury",
+      "target": "Cornelia Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Sixbury",
+      "target": "Infant Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Sixbury",
+      "target": "John Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Sixbury",
+      "target": "Susan Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Bowen",
+      "target": "Cornelia Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Bowen",
+      "target": "Infant Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Bowen",
+      "target": "John Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "William Bowen",
+      "target": "Susan Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "Cornelia Bowen",
+      "target": "Infant Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "Cornelia Bowen",
+      "target": "John Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "Cornelia Bowen",
+      "target": "Susan Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "Infant Bowen",
+      "target": "John Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "Infant Bowen",
+      "target": "Susan Bowen"
+    },
+    {
+      "year": "September 1735",
+      "source": "John Bowen",
+      "target": "Susan Bowen"
+    }
+  ]
+}
