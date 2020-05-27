@@ -27,16 +27,16 @@ $('.slider_label-sixbury').each(function(){
 // variable to store node size
 var nodeSize = ['betweenness'];
 
-// // select node size
-// $("#node-size-sixbury").change(function(){
-//   nodeSize = $(this).val();
-//   updateNodeSize()
-// });
-//
-// $("#node-size-sixbury").change(function(){
-//   nodeSize = $(this).val();
-//   updateNodeSize()
-// });
+// select node size
+$("#node-size-sixbury").change(function(){
+  nodeSize = $(this).val();
+  updateNodeSize()
+});
+
+$("#node-size-sixbury").change(function(){
+  nodeSize = $(this).val();
+  updateNodeSize()
+});
 
 // variable to store button coloring
 var colorFillCategory = ['gender'];
