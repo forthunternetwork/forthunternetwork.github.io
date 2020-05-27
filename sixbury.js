@@ -13,6 +13,7 @@ $("#selected-year-sixbury").change(function(){
   showLinkLines();
   updateNodeSize();
   //showText();
+  console.log(selectedYear)
 });
 
 // label year slider
