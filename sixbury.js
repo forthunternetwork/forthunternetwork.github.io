@@ -87,7 +87,7 @@ $("#filter-fill-sixbury").change(function(){
 let linkedByIndex = {};
 
 // build the svg for the viz
-var svg = d3.select("#viz-sixbury")
+var svg = d3.select("#viz-block-sixbury")
   .append("svg")
   .attr("preserveAspectRatio", "xMinYMin meet")
   .attr("viewBox", "0 0 " + width + " " + height)
