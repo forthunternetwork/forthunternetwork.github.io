@@ -11,7 +11,7 @@
     color: black;
     display: inline;
   }*/
-  
+
   .tooltip-1, .tooltip-2 {
     position: absolute;
     text-align: center;
@@ -26,37 +26,37 @@
     border-radius: 5px;
     pointer-events: none;
   }
-  
+
   img {
     border: 1px solid lightgrey;
   }
-  
+
   .viz-block, .viz {
     border: 1px solid lightgrey;
     border-radius: 5px;
   }
-  
+
   .viz-block {
     padding: 15px;
     margin-bottom: 15px;
   }
-  
+
   .viz {
 /*    max-height: 750px;*/
     height: 90vh;
   }
-  
+
   @media only screen and (max-width: 600px) {
     .viz-block, .viz {
       padding: 0px;
       border-left: 0px;
       border-right: 0px;
     }
-    
+
     .viz {
       height: 80vh;
     }
-    
+
     .container {
       width: 100% !important;
       padding-right:0;
@@ -65,27 +65,27 @@
       margin-left:auto;
     }
   }
-  
+
   footnotes :target {
     background-color: #fcedd2;
     animation: fade 3s forwards;
     border-radius: 5px;
   }
-  
+
   footnotes li {
     padding-top: 5px;
     padding-bottom: 5px;
   }
-  
+
   @keyframes fade {
     from {background-color:#fcedd2;}
     to {background-color:rgba(242, 245, 169, 0);}
   }
-  
+
   #essay {
     counter-reset: sidenote-counter;
   }
-  
+
   .sidenote, .marginnote { float: right;
                          clear: right;
                          font-size: 0.9rem;
@@ -100,26 +100,26 @@
                          }
 
   .sidenote-number { counter-increment: sidenote-counter; }
-  
+
   .sidenote-number:after, .sidenote:before { position: relative;
                                              vertical-align: baseline; }
-  
+
   .sidenote-number:after { content: counter(sidenote-counter);
                            font-size: 0.75rem;
                            font-weight: 800;
                            top: -0.5rem;
                            left: 0.1rem; }
-  
+
   .sidenote:before { content: counter(sidenote-counter) " ";
                      font-size: 0.9rem;
                      font-weight: 600;
                      /*top: -0.5rem;*/ }
-                     
+
   label.sidenote-number { display: inline; }
-  
+
   input.margin-toggle { display: none; }
-  
-  @media (max-width: 760px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
+
+  @media (max-width: 4000px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
                               .sidenote, .marginnote { display: none; }
                               .margin-toggle:checked + .sidenote,
                               .margin-toggle:checked + .marginnote { display: block;
@@ -132,7 +132,24 @@
                                                                      position: relative; }
                               label { cursor: pointer; }
                             }
-  
+
   p {
     font-size: 1.2rem;
+  }
+
+  hr {
+  	border-top: 4px double #8c8b8b;
+  	text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  hr:after {
+  	content: '\002619';
+  	display: inline-block;
+  	position: relative;
+  	top: -15px;
+  	padding: 0 10px;
+  	background: #8c6cc6;
+  	color: white;
+  	font-size: 18px;
   }
