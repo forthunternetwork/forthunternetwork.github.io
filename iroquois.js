@@ -98,7 +98,7 @@ var simulationThree = d3.forceSimulation()
   .force("link", d3.forceLink().id(function(d) {
     return d.name;
   }).strength(1))
-  .force("charge", d3.forceManyBody())
+  .force("charge", d3.forceManyBody().strength(-70))
   .force("center", d3.forceCenter(width / 2, height / 2))
   .force('collision', d3.forceCollide().radius(function(d) {
     return (d.betweenesscentrality_1745 * 150 + d.degree_1745) / 2 + 15
