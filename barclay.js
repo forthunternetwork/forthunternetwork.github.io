@@ -95,8 +95,8 @@
     var raceDomain = ["Native", "White", "Black", "Unknown"];
     var genderDomain = ["Male", "Female", "Unknown"];
     var clanDomain = ["Wolf", "Turtle", "Bear", "Wolf or Bear", "Turtle or Wolf", "Bear or Turtle", "Unknown or NA", "Anti-Leislerian family", "Pro-Leislerian family"];
-    var modularityDomain = ["Canasteje-Oseragighte", "Kaghtereni-Uttijagaroondi", "Kenderago-Canostens", "Bridge", "English", "Dutch-English", "Scots-Irish", "Palatine", "NA"];
-    var connectionDomain = ["Both female", "Different genders", "Both male"];
+    var modularityDomain = ["Canasteje-Oseragighte", "Kaghtereni-Uttijagaroondi", "Kenderago-Canostens", "Bridge", "English", "Dutch", "Scots-Irish", "Palatine", "NA"];
+    var connectionDomain = ["Both female","Different genders", "Both male"];
     var roleDomain = ["Baptized", "Parent", "Sponsor"];
     var legendDomain = raceDomain;
     var fillLegend = ['race'];
@@ -148,10 +148,10 @@
     // use force simulation
     // is there a way to change the collision distance on radius change?
     var simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().id(function(d) {
+      .force("link", d3.forceLink().strength(1).id(function(d) {
         return d.name;
-      }).strength(1))
-      .force("charge", d3.forceManyBody())
+      }))
+      .force("charge", d3.forceManyBody().strength(-70))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force('collision', d3.forceCollide().radius(function(d) {
         return (d.betweenesscentrality_1745 * 150 + d.degree_1745) / 2 + 15
