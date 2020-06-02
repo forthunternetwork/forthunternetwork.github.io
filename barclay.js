@@ -96,7 +96,7 @@
     var genderDomain = ["Male", "Female", "Unknown"];
     var clanDomain = ["Wolf", "Turtle", "Bear", "Wolf or Bear", "Turtle or Wolf", "Bear or Turtle", "Unknown or NA", "Anti-Leislerian family", "Pro-Leislerian family"];
     var modularityDomain = ["Canasteje-Oseragighte", "Kaghtereni-Uttijagaroondi", "Kenderago-Canostens", "Bridge", "English", "Dutch-English", "Scots-Irish", "Palatine", "NA"];
-    var connectionDomain = ["Different genders", "Both male", "Both female"];
+    var connectionDomain = ["Both female", "Different genders", "Both male"];
     var roleDomain = ["Baptized", "Parent", "Sponsor"];
     var legendDomain = raceDomain;
     var fillLegend = ['race'];
