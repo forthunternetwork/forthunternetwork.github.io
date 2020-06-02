@@ -94,7 +94,7 @@
     //domains for updating the legend
     var raceDomain = ["Native", "White", "Black", "Unknown"];
     var genderDomain = ["Male", "Female", "Unknown"];
-    var clanDomain = ["Wolf", "Turtle", "Bear", "Wolf or Bear", "Turtle or Wolf", "Bear or Turtle", "Mahican", "Unknown or NA"];
+    var clanDomain = ["Wolf", "Turtle", "Bear", "Wolf or Bear", "Turtle or Wolf", "Bear or Turtle", "Unknown or NA", "Anti-Leislerian family", "Pro-Leislerian family"];
     var modularityDomain = ["Canasteje-Oseragighte", "Kaghtereni-Uttijagaroondi", "Kenderago-Canostens", "Bridge", "English", "Dutch-English", "Scots-Irish", "Palatine", "NA"];
     var connectionDomain = ["Different genders", "Both male", "Both female"];
     var roleDomain = ["Baptized", "Parent", "Sponsor"];
@@ -348,8 +348,14 @@
       var allLines = svg.selectAll('line');
       // loop over each node, and update color attribute
       allCircles.transition().duration(300).attr("fill", function(d,i){
-        if (colorFillCategory === "connection") { return "rgba(0,0,0,0.1)" }
+        if (colorFillCategory === "connection") { return color(d.modularity_class) }
         else { return color(d[colorFillCategory]); }
+      });
+      allCircles.style("opacity", function(d,i){
+        if (colorFillCategory === "connection") {
+          return "0.3"
+        }
+        else { return "1" }
       });
       allLines.style("stroke", function(d,i){
         if (colorFillCategory === "connection") {
