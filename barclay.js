@@ -101,7 +101,7 @@
     var legendDomain = raceDomain;
     var fillLegend = ['race'];
     var strokeLegend = ['race'];
-    var allDomains = raceDomain.concat(genderDomain).concat(clanDomain).concat(modularityDomain).concat(roleDomain).concat(connectionDomain);
+    var allDomains = raceDomain.concat(genderDomain).concat(modularityDomain).concat(clanDomain).concat(connectionDomain).concat(roleDomain);
 
     var defaultPalette = ["rgb(234,95,95)","rgb(81, 98, 194)","rgb(255,177,78)","rgb(255,242,0)","rgb(117,250,122)","rgb(0,155,123)","rgb(140,62,174)","rgb(154,154,154)","rgb(0,0,0)"]
 
