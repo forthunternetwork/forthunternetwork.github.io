@@ -85,7 +85,7 @@ $("#filter-fill-sixbury").change(function(){
 //});
 
 // preallocate linkedbyindex
-let sixburylinkedByIndex = {};
+let linkedByIndex = {};
 
 // build the svg for the viz
 var svgsixbury = d3.select("#viz-block-sixbury")
@@ -250,19 +250,19 @@ d3.json("barclay.json", function(error, graph) {
   // mouse double click highlight is taken from this example:
   // http://www.coppelia.io/2014/06/finding-neighbours-in-a-d3-force-directed-layout-2/
   // we need to create an array of "connections" for quick lookup
-  var sixburylinkedByIndex = {};
+  var linkedByIndex = {};
   for (i = 0; i < graph.nodes.length; i++) {
-      sixburylinkedByIndex[i + "," + i] = 1;
+      linkedByIndex[i + "," + i] = 1;
   };
 
   // Loop over each "link" and determine if they are connectioned
   graph.links.forEach(function (d) {
-      sixburylinkedByIndex[d.source.index + "," + d.target.index] = 1;
+      linkedByIndex[d.source.index + "," + d.target.index] = 1;
   });
 
   // define a "lookup" function to get connections
   function neighboring(a, b) {
-      return sixburylinkedByIndex[a.index + "," + b.index];
+      return linkedByIndex[a.index + "," + b.index];
   };
   links = d3.selectAll('line');
 
