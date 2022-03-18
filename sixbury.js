@@ -85,7 +85,7 @@ $("#filter-fill-sixbury").change(function(){
 //});
 
 // preallocate linkedbyindex
-let sixburylinkedByIndex = {};
+// let sixburylinkedByIndex = {};
 
 // build the svg for the viz
 var svgsixbury = d3.select("#viz-block-sixbury")
